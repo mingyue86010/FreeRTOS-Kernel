@@ -482,7 +482,7 @@ void vPortSetStackWatchpoint( void * pxStackStart )
     esp_set_watchpoint( 1, ( char * ) addr, 32, ESP_WATCHPOINT_STORE );
 }
 
-#if defined( CONFIG_SPIRAM_SUPPORT )
+#if !defined( CONFIG_SPIRAM_SUPPORT )
 
 /*
  * Compare & set (S32C1) does not work in external RAM. Instead, this routine uses a mux (in internal memory) to fake it.
